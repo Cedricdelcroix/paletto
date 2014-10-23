@@ -46,4 +46,11 @@ var pligne = new Array(6);
         pligne[4][5] = "vert";
         pligne[5][5] = "noir";
     }
+    this.getplateau = function(ligne,colonne){
+        for(var iligne = 0; iligne < ligne.length ; iligne++){
+            for ( var icolonne = 0; icolonne < colonne.length ; icolonne++){
+                return ligne[iligne][icolonne];
+            }
+        }
+    }
 };
