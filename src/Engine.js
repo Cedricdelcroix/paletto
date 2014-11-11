@@ -115,4 +115,11 @@ var pligne;
             }
         }
     }
+    this.checkcoin = function(couleur){
+        if(this.getplateau(0,0) == couleur || this.getplateau(0,5) == couleur || this.getplateau(5,0) == couleur || this.getplateau(5,5) == couleur ){
+            return true;
+        }else{
+            return false;
+        }
+    }
 };
