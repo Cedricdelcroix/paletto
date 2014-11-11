@@ -18,8 +18,8 @@ PalettoTestCase.prototype.testchoseplayer1 = function () {
 PalettoTestCase.prototype.testStory3 = function () {
     var plateau = new Paletto();
     plateau.initplateau();
-    plateau.removecase();
+    plateau.removecase(5,0);
     assert(plateau.getplateau(5,0)== "empty");
-    assert(plateau.getplayercountbillebycolor(1,"jaune"));
+    assert(plateau.getplayercountbillebycolor(1,"jaune")==1);
     assert(plateau.countnbbille()== 35);
 };
