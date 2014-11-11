@@ -3,12 +3,15 @@
 var Paletto = function () {
 
 // private attributes and methods
-var pligne = new Array(6);
-    for(var ligne=0; ligne < pligne.length; ligne++){
-        pligne[ligne] = new Array(6);
-    }
+var pligne;
 // public methods
     this.initplateau = function(){
+
+        pligne = new Array(6);
+        for(var ligne=0; ligne < pligne.length; ligne++){
+            pligne[ligne] = new Array(6);
+        }
+
         pligne[0][0] = "noir";
         pligne[1][0] = "jaune";
         pligne[2][0] = "bleu";
@@ -47,9 +50,68 @@ var pligne = new Array(6);
         pligne[5][5] = "noir";
     }
     this.getplateau = function(ligne,colonne){
-        for(var iligne = 0; iligne < ligne.length ; iligne++){
-            for ( var icolonne = 0; icolonne < colonne.length ; icolonne++){
-                return ligne[iligne][icolonne];
+        for(var iligne = 0; iligne < 6 ; iligne++){
+            for ( var icolonne = 0; icolonne < 6 ; icolonne++){
+                return pligne[ligne][colonne];
+            }
+        }
+    }
+    this.getjuxtapoleft = function(irow,icolumn){
+        if(icolumn>0){
+            var caseleft = this.getplateau(irow,icolumn-1);
+            if(this.getplateau(irow,icolumn)!= caseleft){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return true
+        }
+    }
+    this.getjuxtaporight = function(irow,icolumn){
+        if(icolumn<5){
+            var caseright = this.getplateau(irow,icolumn+1);
+            if(this.getplateau(irow,icolumn)!= caseright){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return true
+        }
+    }
+    this.getjuxtapodown = function(irow,icolumn){
+        if(irow>0){
+            var casedown = this.getplateau(irow-1,icolumn);
+            if(this.getplateau(irow,icolumn)!= casedown){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return true
+        }
+    }
+    this.getjuxtapoup = function(irow,icolumn){
+        if(irow<5){
+            var caseup = this.getplateau(irow+1,icolumn);
+            if(this.getplateau(irow,icolumn)!= caseup){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return true
+        }
+    }
+    this.getjuxtapo = function(){
+        for(var iligne = 0; iligne < 6 ; iligne++){
+            for ( var icolonne = 0; icolonne < 6 ; icolonne++) {
+            if(this.getjuxtapoleft(iligne,icolonne)== true && this.getjuxtaporight(iligne,icolonne)==true && this.getjuxtapodown(iligne,icolonne)==true && this.getjuxtapoup(iligne,icolonne)==true){
+                return true;
+            }else{
+                return false;
+            }
             }
         }
     }
