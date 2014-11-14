@@ -35,5 +35,5 @@ PalettoTestCase.prototype.testStory4 = function () {
 PalettoTestCase.prototype.testStory5 = function(){
     var plateau = new Paletto();
     plateau.initplateau();
-    assert(plateau.canremove() ==true);
+    assert(plateau.canremove(0,0) ==true);
 };

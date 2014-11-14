@@ -173,4 +173,50 @@ var pligne;
          }
         return count;
     }
+
+    this.canremove =function(ligne,colonne){
+        if(ligne>0 && ligne<6 && colonne>0 && colonne<6){
+            if((this.countneightboor(ligne+1,colonne)+this.countneightboor(ligne-1,colonne)+this.countneightboor(ligne,colonne+1)+this.countneightboor(ligne,colonne-1))>=2){
+                return true
+            }else{
+                return false
+            }
+        }else{
+            if(ligne<6 && colonne>=0 &&colonne<6){
+                if((this.countneightboor(ligne-1,colonne)+this.countneightboor(ligne,colonne+1)+this.countneightboor(ligne,colonne-1))>=2){
+                    return true
+                }else{
+                    return false
+                }
+            }
+            if(ligne>=0 && colonne>=0 &&colonne<6){
+                if((this.countneightboor(ligne+1,colonne)+this.countneightboor(ligne,colonne+1)+this.countneightboor(ligne,colonne-1))>=2){
+                    return true
+                }else{
+                    return false
+                }
+            }
+            if(ligne<=0 && ligne>6 && colonne>6){
+                if((this.countneightboor(ligne-1,colonne)+this.countneightboor(ligne,colonne)+this.countneightboor(ligne,colonne-1))>=2){
+                    return true
+                }else{
+                    return false
+                }
+            }
+            if(ligne<=0 && ligne>6 && colonne<=0){
+                if((this.countneightboor(ligne-1,colonne)+this.countneightboor(ligne+1,colonne)+this.countneightboor(ligne,colonne+1))>=2){
+                    return true
+                }else{
+                    return false
+                }
+            }
+        }
+    }
+    this.countneightboor =function(ligne,colonne){
+        var count=0;
+        if(this.getplateau(ligne,colonne)!="vide"){
+            count ++;
+        }
+        return count;
+    }
 };
