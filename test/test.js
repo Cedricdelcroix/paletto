@@ -23,3 +23,12 @@ PalettoTestCase.prototype.testStory3 = function () {
     assert(plateau.getplayercountbillebycolor(1,"jaune")==1);
     assert(plateau.countnbbille()== 35);
 };
+PalettoTestCase.prototype.testStory4 = function () {
+    var plateau = new Paletto();
+    plateau.initplateau();
+    plateau.removecase(5,0);
+    plateau.nextturn();
+    plateau.removecase(0,0);
+    plateau.removecase(5,5);
+    assert(plateau.getplayercountbillebycolor(2,"noir")==2);
+};
