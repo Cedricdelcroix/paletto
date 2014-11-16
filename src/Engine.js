@@ -2,6 +2,7 @@
 
 var Paletto = function () {
 
+    // modiff 6x6 par 8x8
 // private attributes and methods
 var pligne;
     var whoplay = 1;
