@@ -219,4 +219,14 @@ var pligne;
         }
         return count;
     }
+    this.checkwin =function(player,couleur){
+        if(this.getplayercountbillebycolor(player,couleur)==6){
+            if(whoplay==1){
+                return 1;
+            }else{
+                return 2;
+            }
+        }
+        return 0;
+    }
 };
