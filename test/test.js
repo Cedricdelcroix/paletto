@@ -85,3 +85,50 @@ PalettoTestCase.prototype.testStory6= function(){
     assert(plateau.checkwin(1,"noir")==1);
 
 }
+//PalettoTestCase.prototype.testStory7= function(){
+//    var plateau = new Paletto();
+//    plateau.initplateau();
+//    plateau.removecase(0,0);
+//    plateau.removecase(5,5);
+//    //joueur 2
+//    plateau.nextturn();
+//    plateau.removecase(1,0);
+//    plateau.removecase(5,0);
+//    //joueur 1
+//    plateau.nextturn();
+//    plateau.removecase(4,0);
+//    plateau.removecase(5,5);
+//    //joueur 2
+//    plateau.nextturn();
+//    plateau.removecase(2,0);
+//    //joueur 1
+//    plateau.nextturn()
+//    plateau.removecase(4,0);
+//    plateau.removecase(3,5);
+//    plateau.removecase(0,5);
+//    plateau.removecase(0,2);
+//    //joueur 2
+//    plateau.nextturn();
+//    plateau.removecase(0,4);
+//    plateau.removecase(2,5);
+//    plateau.removecase(5,3);
+//    plateau.removecase(3,0);
+//    //joueur 1
+//    plateau.nextturn();
+//    plateau.removecase(2,2);
+//    plateau.removecase(1,5);
+//    plateau.removecase(3,1);
+//    //joueur 2
+//    plateau.nextturn()
+//    plateau.removecase(2,1);
+//    plateau.removecase(1,4);
+//    plateau.removecase(4,4);
+//    //joueur 1
+//    plateau.nextturn()
+//    plateau.removecase(3,1);
+//    plateau.removecase(5,2);
+//    plateau.removecase(4,3);
+//    plateau.removecase(2,4);
+//    assert(plateau.checkwin(1,"noir")==1);
+//
+//}
